@@ -1,0 +1,57 @@
+<!-- navbar -->
+<app-navbar></app-navbar>
+
+<div class="container my-3">
+  <div class="container my-4 text-center">
+    <h1>{{ title }}</h1>
+  </div>
+  
+  <!-- add employee button -->
+  <button routerLink="/add-employee" class="btn add-btn text-white">Add Employee</button>
+
+
+  <!-- table -->
+  <div class="col my-1">
+    <table class="table table-bordered table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>Sr no.</th>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Designation</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Added Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr
+          [routerLink]="['/details', item.id]"
+          class="pointer"
+          *ngFor="let item of data; index as i"
+        >
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.name }}</td>
+          <td>
+            <h5>
+              <span
+                [ngClass]="{
+                  badge: true,
+                  'bg-success': item.status.toLowerCase() === 'active',
+                  'bg-warning': item.status.toLowerCase() === 'inactive',
+                  'bg-danger': item.status.toLowerCase() === 'suspend'
+                }"
+                >{{ item.status | titlecase }}</span
+              >
+            </h5>
+          </td>
+          <td>{{ item.desg }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.address.city }}, {{ item.address.country }}</td>
+          <td>{{ item.addedDate | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

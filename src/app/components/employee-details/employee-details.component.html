@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+
+<div class="container" align="center">
+  <div class="card my-5 w-50 text-center">
+    <div class="card-header bg-dark text-white">
+      <h3>{{ empData.name }}</h3>
+    </div>
+    <div class="card-body">
+      <div
+        class="my-3"
+        [ngClass]="{
+          'text-success': empData.status.toLowerCase() === 'active',
+          'text-warning': empData.status.toLowerCase() === 'inactive',
+          'text-danger': empData.status.toLowerCase() === 'suspend'
+        }"
+      >
+        <h5>Status : {{ empData.status }}</h5>
+      </div>
+      <div class="my-3">
+        <h5>Designation : {{ empData.desg }}</h5>
+      </div>
+      <div class="my-3">
+        <h5>Email Id : {{ empData.email }}</h5>
+      </div>
+      <div class="my-3">
+        <h5>
+          Location : {{ empData.address.city }}({{ empData.address.state }}),
+          {{ empData.address.country }}
+        </h5>
+      </div>
+      <div style="text-align: right">{{ empData.addedDate | date }}</div>
+    </div>
+    <div class="card-footer">
+      <div>
+        <span class="m-3"><button (click)="onDelete()" class="btn btn-danger">Delete</button></span>
+        <span class="m-3"
+          ><button
+            class="btn btn-warning"
+            [routerLink]="['/edit-employee', empData.id]"
+          >
+            Edit
+          </button></span
+        >
+      </div>
+    </div>
+  </div>
+</div>

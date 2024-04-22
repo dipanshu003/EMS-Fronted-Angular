@@ -1,0 +1,87 @@
+<!-- navbar -->
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <div class="container text-center mt-3">
+    <h1>{{ title }}</h1>
+  </div>
+
+  <div class="container w-50 my-5">
+    <div class="my-3">
+      <label for="name" class="form-label">Name:</label>
+      <input
+      required
+        class="form-control"
+        type="text"
+        name="name"
+        id="name"
+        [(ngModel)]="updateEmpData.name"
+      />
+    </div>
+    <div class="my-3">
+      <label for="email" class="form-label">Email:</label>
+      <input
+      required
+        class="form-control"
+        type="email"
+        name="email"
+        id="email"
+        [(ngModel)]="updateEmpData.email"
+      />
+    </div>
+    <div class="my-3">
+      <label for="desg" class="form-label">Designation:</label>
+      <input
+      required
+        class="form-control"
+        type="text"
+        name="desg"
+        id="desg"
+        [(ngModel)]="updateEmpData.desg"
+      />
+    </div>
+    <div class="my-3">
+      <label for="status" class="form-label">Status:</label>
+      <select
+      required
+        [(ngModel)]="updateEmpData.status"
+        class="form-control"
+        name="status"
+        id="status"
+      >
+        <option [ngValue]="item" *ngFor="let item of updateStatus">
+          {{ item }}
+        </option>
+      </select>
+    </div>
+    <div class="my-3">
+      <label for="address" class="form-label">Address:</label>
+      <select
+      required
+        [(ngModel)]="updateEmpData.address"
+        class="form-control"
+        name="address"
+        id="address"
+      >
+        <option [ngValue]="item" *ngFor="let item of updateAddress">
+          {{ item.city }}, {{ item.state }} ({{ item.country }})
+        </option>
+      </select>
+    </div>
+
+    <div class="my-3">
+      <label for="pass" class="form-label">Password:</label>
+      <input
+      required
+        [(ngModel)]="updateEmpData.password"
+        type="text"
+        name="pass"
+        id="pass"
+        class="form-control"
+      />
+    </div>
+    <div class="text-center">
+      <button (click)="onSubmit()" class="btn btn-warning">Update</button>
+    </div>
+  </div>
+</div>
