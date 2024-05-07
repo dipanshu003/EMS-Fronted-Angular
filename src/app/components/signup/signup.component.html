@@ -1,0 +1,110 @@
+<div class="container">
+ 
+  <form #signupForm="ngForm" (ngSubmit)="signupSubmit(signupForm.value)">
+
+    <div class="card w-50 m-5 mx-auto">
+      <!-- header -->
+      <div class="card-header">
+        <h3 class="text-center">Sign up</h3>
+      </div>
+
+      <!-- body -->
+      <div class="card-body">
+        <!-- Full Name -->
+        <div class="my-3">
+          <label for="name" class="form-label">Full Name:</label>
+          <input
+          #fullName="ngModel"
+            type="text"
+            class="form-control"
+            name="fullname"
+            placeholder="Enter full name"
+            ngModel
+            required
+          />
+          <span class="text-danger" *ngIf="fullName.touched && !fullName.valid">Please Enter Full Name</span>
+        </div>
+        <!-- Username -->
+        <div class="my-3">
+          <label for="username" class="form-label">Username:</label>
+          <input
+          #userName="ngModel"
+            type="text"
+            class="form-control"
+            name="username"
+            placeholder="Enter username"
+            ngModel
+            required
+          />
+          <span class="text-danger" *ngIf="userName.touched && !userName.valid">Please Enter Username</span>
+
+        </div>
+        <!-- email -->
+        <div class="my-3">
+          <label for="email" class="form-label">Email:</label>
+          <input
+          #email="ngModel"
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="Enter email"
+            email
+            ngModel
+            required
+          />
+          <span class="text-danger" *ngIf="email.touched && !email.valid">Please Enter Email</span>
+
+        </div>
+        <!-- Password -->
+        <div class="my-3">
+          <label for="password" class="form-label">Password:</label>
+          <input
+          #pass="ngModel"
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="Enter password"
+            ngModel
+            required
+          />
+          <span class="text-danger" *ngIf="pass.touched && !pass.valid">Please Enter Password</span>
+
+        </div>
+        <!-- Gender  -->
+        <div class="text-center my-3">
+          <label for="gender" class="form-label">Gender : </label>
+          <input
+            class="form-check-input mx-2"
+            type="radio"
+            name="gender"
+            id="exampleRadios1"
+            value="male"
+            ngModel
+            checked
+          />
+          <label class="form-check-label" for="gender"> Male </label>
+          <input
+            class="form-check-input mx-2"
+            type="radio"
+            name="gender"
+            id="exampleRadios2"
+            ngModel
+            value="female"
+          />
+          <label class="form-check-label" for="gender"> Female </label>
+        </div>
+  
+        <!-- button -->
+        <div class="button text-center">
+          <button class="btn btn-success my-3" [disabled]="!signupForm.valid">Sign up</button>
+        </div>
+  
+        <div class="text-center">
+          <a routerLink="">Sign in</a>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+</div>

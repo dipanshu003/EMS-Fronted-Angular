@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AddEmployeeComponent } from './components/add-employee/add-employee.com
     NotFoundComponent,
     EmployeeDetailsComponent,
     EditEmployeeComponent,
-    AddEmployeeComponent
+    AddEmployeeComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

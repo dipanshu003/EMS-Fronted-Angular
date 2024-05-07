@@ -7,80 +7,85 @@
   </div>
 
   <form action="">
-  <div class="container w-50 my-5">
-    <div class="mb-3 mt-3">
-      <label for="name" class="form-label">Name:</label>
-      <input
-        [(ngModel)]="addEmpData.name"
-        type="text"
-        class="form-control"
-        id="name"
-        placeholder="Enter name"
-        name="name"
-        required
-      />
-    </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">Email:</label>
-      <input
-        [(ngModel)]="addEmpData.email"
-        type="email"
-        class="form-control"
-        id="email"
-        placeholder="Enter email"
-        name="email"
-        required
-      />
-    </div>
-    <div class="mb-3">
-      <label for="desg" class="form-label">Designation:</label>
-      <input
-        [(ngModel)]="addEmpData.desg"
-        type="text"
-        class="form-control"
-        id="desg"
-        placeholder="Enter designation"
-        name="desg"
-        required
-      />
-    </div>
-    <div class="mb-3">
+    <div class="container w-50 my-5">
+      <div class="mb-3 mt-3">
+        <label for="name" class="form-label">Name:</label>
+        <input
+          [(ngModel)]="addEmpData.name"
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="Enter name"
+          name="name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input
+          [(ngModel)]="addEmpData.email"
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Enter email"
+          name="email"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="desg" class="form-label">Designation:</label>
+        <input
+          [(ngModel)]="addEmpData.desg"
+          type="text"
+          class="form-control"
+          id="desg"
+          placeholder="Enter designation"
+          name="desg"
+          required
+        />
+      </div>
+      <div class="mb-3">
         <label for="pass" class="form-label">Password:</label>
         <input
-        [(ngModel)]="addEmpData.password"
-        type="password"
-        class="form-control"
-        id="pass"
-        placeholder="Enter password"
-        name="pass"
-        required
-      />
+          [(ngModel)]="addEmpData.password"
+          type="password"
+          class="form-control"
+          id="pass"
+          placeholder="Enter password"
+          name="pass"
+          required
+        />
       </div>
 
-    <div class="mb-3">
-      <label for="status" class="form-label">Select:</label>
-      <select class="form-control" id="status" [(ngModel)]="addEmpData.status">
-        <option [value]="item" *ngFor="let item of statusArr">
-          {{ item }}
-        </option>
-      </select>
-    </div>
+      <div class="mb-3">
+        <label for="status" class="form-label">Select:</label>
+        <select
+          class="form-control"
+          id="status"
+          [(ngModel)]="addEmpData.status"
+        >
+          <option [value]="item" *ngFor="let item of statusArr">
+            {{ item }}
+          </option>
+        </select>
+      </div>
 
-    <div class="mb-3">
-      <label for="address" class="form-label">Location:</label>
-      <select
-        class="form-control"
-        id="address"
-        [(ngModel)]="addEmpData.address"
-      >
-        <option [ngValue]="item" *ngFor="let item of addressData">
-          {{ item.city }}, {{ item.state }} ({{ item.country }})
-        </option>
-      </select>
-    </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Location:</label>
+        <select
+          class="form-control"
+          id="address"
+          [(ngModel)]="addEmpData.address"
+        >
+          <option [ngValue]="item" *ngFor="let item of addressData">
+            {{ item.city }}, {{ item.state }} ({{ item.country }})
+          </option>
+        </select>
+      </div>
 
-    <div class="text-center">
-      <button (click)="onSubmit()" class="btn btn-success">Enter</button>
+      <div class="text-center">
+        <button (click)="onSubmit()" class="btn btn-success">Enter</button>
+      </div>
     </div>
-  </div>
+  </form>
 </div>

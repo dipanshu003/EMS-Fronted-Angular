@@ -42,4 +42,19 @@ export class HttpServiceService {
       responseType:"text"
     })
   }
+
+  registerAdmin(jsonObj:any){
+
+     return this.http.post(`${this.baseURL}signup`,jsonObj,{
+      responseType:"text"
+    });
+
+  }
+
+  loginAdmin(jsonObj : any)
+  {
+    return this.http.post(`${this.baseURL}signin`,jsonObj,{
+      responseType : "text"
+    })
+  }
 }

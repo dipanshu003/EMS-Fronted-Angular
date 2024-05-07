@@ -44,13 +44,21 @@ export class EmployeeDetailsComponent implements OnInit {
   deleteEmployeeById(id:number)
   {
     this.service.removeEmpById(id).subscribe((response:any)=>{
-      console.log(response);
+      // console.log(response);
       this.router.navigate(['home']);
     })
   }
 
   onDelete(){
-    this.deleteEmployeeById(this.id);
+
+    let wantToDelete=confirm("Are you sure to delete it ?");
+
+    if(wantToDelete)
+      {
+        this.deleteEmployeeById(this.id);
+      }
+
+    
   }
 
 }

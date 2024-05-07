@@ -1,0 +1,51 @@
+<div class="container">
+  <form #signinForm="ngForm" (ngSubmit)="signSubmit(signinForm.value)">
+    <div class="card w-50 m-5 mx-auto">
+      <!-- Header -->
+      <div class="card-header">
+        <h3 class="text-center">Sign in</h3>
+      </div>
+      <!-- Body -->
+      <div class="card-body">
+        <div class="my-3">
+          <!-- username -->
+          <label for="username" class="form-label">Username:</label>
+          <input
+          #userName="ngModel"
+            type="text"
+            class="form-control"
+            name="username"
+            placeholder="Enter username"
+            ngModel
+            required
+          />
+          <span class="text-danger" *ngIf="userName.touched && !userName.valid">Please Enter Username</span>
+        </div>
+        <!-- password -->
+        <div class="my-3">
+          <label for="password" class="form-label">Password:</label>
+          <input
+          #pass = "ngModel"
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="Enter password"
+            ngModel
+            required
+          />
+          <span class="text-danger" *ngIf="pass.touched && !pass.valid">Please Enter Password</span>
+        </div>
+
+        <div class="button text-center">
+          <button class="btn btn-success my-3" [disabled]="!signinForm.valid">
+            Sign in
+          </button>
+        </div>
+
+        <div class="text-center">
+          <a routerLink="/signup">Register new user</a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
